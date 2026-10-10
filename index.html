@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RootBrowser - A modern, privacy-focused web browser built with Qt6 and Chromium. Features Tor private mode, built-in ad blocker, fingerprint protection, and more.">
+    <meta name="theme-color" content="#0a0c14">
+    <title>RootBrowser — Privacy-Focused Web Browser</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="css/animations.css" as="style">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M16 8v8m0 4v0.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <span>RootBrowser</span>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#privacy" class="nav-link">Privacy</a>
+                <a href="#downloads" class="nav-link">Download</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="https://github.com/aryanweblabs/rootbrowser" target="_blank" class="nav-link nav-github">GitHub</a>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="hero-grid"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Fast · Private</span>
+                    <span class="title-line highlight">Beautiful Browser</span>
+                </h1>
+                <p class="hero-subtitle">
+                    A modern, privacy-focused web browser built with Qt6 and Chromium. 
+                    Browse anonymously with Tor, block ads and trackers, protect your fingerprint.
+                </p>
+                
+                <div class="hero-cta">
+                    <button class="cta-primary" id="ctaDownload">
+                        <span class="cta-icon">↓</span>
+                        Download Now
+                    </button>
+                    <button class="cta-secondary" id="ctaGithub">
+                        <span class="cta-icon">⭐</span>
+                        View on GitHub
+                    </button>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Open Source</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Tor</span>
+                        <span class="stat-label">Built-in</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Qt6+</span>
+                        <span class="stat-label">Cross-platform</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="browser-mockup">
+                    <div class="mockup-header">
+                        <div class="mockup-buttons">
+                            <span class="btn-close"></span>
+                            <span class="btn-min"></span>
+                            <span class="btn-max"></span>
+                        </div>
+                    </div>
+                    <div class="mockup-content">
+                        <div class="mockup-loading"></div>
+                    </div>
+                </div>
+                <div class="browser-glow"></div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-dot"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Powerful Features</h2>
+                <p>Everything you need for private, fast, and beautiful browsing</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon privacy">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                        </svg>
+                    </div>
+                    <h3>Privacy First</h3>
+                    <p>Tor private mode for anonymous browsing through 3-hop circuits. Your IP stays hidden.</p>
+                    <ul class="feature-list">
+                        <li>Tor integration</li>
+                        <li>Fingerprint protection</li>
+                        <li>Tracker blocking</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon security">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3>HTTPS-Only</h3>
+                    <p>Auto-upgrade insecure HTTP connections to HTTPS. Block unencrypted sites.</p>
+                    <ul class="feature-list">
+                        <li>Auto-upgrade</li>
+                        <li>Encryption enforced</li>
+                        <li>Smart exceptions</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon speed">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6.5 5.5L17.5 12 6.5 18.5z"/>
+                        </svg>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Chromium-based engine for blazing fast performance. Smooth scrolling, instant loading.</p>
+                    <ul class="feature-list">
+                        <li>Chromium 100%</li>
+                        <li>Memory optimized</li>
+                        <li>Smart caching</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon adblock">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+                        </svg>
+                    </div>
+                    <h3>Ad Blocker</h3>
+                    <p>Built-in ad and tracker blocker. Zero config, automatic protection on all sites.</p>
+                    <ul class="feature-list">
+                        <li>YouTube ads blocked</li>
+                        <li>Tracker filtering</li>
+                        <li>Auto-enabled</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon download">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                    </div>
+                    <h3>Smart Downloads</h3>
+                    <p>Advanced download manager with pause, resume, and speed tracking.</p>
+                    <ul class="feature-list">
+                        <li>Pause & resume</li>
+                        <li>ETA tracking</li>
+                        <li>Persistent history</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon ui">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3>Beautiful UI</h3>
+                    <p>Modern, minimalist interface with dark mode, themes, and smooth animations.</p>
+                    <ul class="feature-list">
+                        <li>Dark theme</li>
+                        <li>Command palette</li>
+                        <li>Wallpapers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Deep Dive -->
+    <section class="privacy" id="privacy">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Privacy Technology</h2>
+                <p>Advanced anti-tracking and fingerprint protection</p>
+            </div>
+
+            <div class="privacy-grid">
+                <div class="privacy-item">
+                    <div class="privacy-number">1</div>
+                    <h4>Fingerprint Protection</h4>
+                    <p>Spoof Canvas, WebGL, Audio, and Timezone data. Add imperceptible noise to break tracking scripts.</p>
+                </div>
+
+                <div class="privacy-item">
+                    <div class="privacy-number">2</div>
+                    <h4>Tor Integration</h4>
+                    <p>Route all traffic through Tor 3-hop circuits. Browse completely anonymously with .onion support.</p>
+                </div>
+
+                <div class="privacy-item">
+                    <div class="privacy-number">3</div>
+                    <h4>Script Isolation</h4>
+                    <p>Private profiles use in-memory caches. No cookies, no local storage, no persistent traces.</p>
+                </div>
+
+                <div class="privacy-item">
+                    <div class="privacy-number">4</div>
+                    <h4>DNT Headers</h4>
+                    <p>Send "Do Not Track" signals. Respect user privacy preferences across the web.</p>
+                </div>
+
+                <div class="privacy-item">
+                    <div class="privacy-number">5</div>
+                    <h4>HTTPS Enforced</h4>
+                    <p>Automatic HTTP to HTTPS upgrade. Block insecure connections with user confirmation.</p>
+                </div>
+
+                <div class="privacy-item">
+                    <div class="privacy-number">6</div>
+                    <h4>Hardware Spoofing</h4>
+                    <p>Hide CPU cores, RAM, platform, and device info. Reduce hardware-based fingerprinting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="screenshots" id="screenshots">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Take a Look</h2>
+                <p>Beautiful screenshots of RootBrowser in action</p>
+            </div>
+
+            <div class="screenshot-grid">
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-text">Home Page</div>
+                    </div>
+                    <h4>Home Page</h4>
+                    <p>Elegant landing page with quick-access tiles and beautiful wallpapers.</p>
+                </div>
+
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-text">Download Manager</div>
+                    </div>
+                    <h4>Download Manager</h4>
+                    <p>Advanced download tracking with pause, resume, and speed monitoring.</p>
+                </div>
+
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-text">Private Mode</div>
+                    </div>
+                    <h4>Private Mode (Tor)</h4>
+                    <p>Isolated Tor browsing with real-time status and .onion support.</p>
+                </div>
+
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-text">Settings</div>
+                    </div>
+                    <h4>Settings</h4>
+                    <p>Comprehensive privacy and performance settings at your fingertips.</p>
+                </div>
+
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-text">Bookmarks</div>
+                    </div>
+                    <h4>Bookmarks</h4>
+                    <p>Full-text search and organization for all your saved sites.</p>
+                </div>
+
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-text">History</div>
+                    </div>
+                    <h4>History</h4>
+                    <p>Day-grouped browsing history with powerful search capabilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Stack -->
+    <section class="tech-stack" id="tech">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Built With</h2>
+                <p>Modern technologies for a modern browser</p>
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h4>Qt6</h4>
+                    <p>Cross-platform UI framework for native performance on Linux, Windows, macOS</p>
+                </div>
+                <div class="tech-item">
+                    <h4>C++17</h4>
+                    <p>High-performance compiled language for system-level efficiency</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Chromium</h4>
+                    <p>Industry-standard rendering engine for 100% web compatibility</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Tor</h4>
+                    <p>Anonymous network for private, uncensored browsing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section class="downloads" id="downloads">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Download RootBrowser</h2>
+                <p>Available for Linux, Windows, and macOS</p>
+            </div>
+
+            <div class="downloads-grid">
+                <div class="download-card linux">
+                    <div class="download-icon">🐧</div>
+                    <h3>Linux</h3>
+                    <p>Debian / Ubuntu / Arch</p>
+                    <button class="download-btn" onclick="showDownloadModal('linux')">
+                        Download
+                    </button>
+                </div>
+
+                <div class="download-card windows">
+                    <div class="download-icon">🪟</div>
+                    <h3>Windows</h3>
+                    <p>Windows 10 / 11</p>
+                    <button class="download-btn" onclick="showDownloadModal('windows')">
+                        Download
+                    </button>
+                </div>
+
+                <div class="download-card macos">
+                    <div class="download-icon">🍎</div>
+                    <h3>macOS</h3>
+                    <p>Intel & Apple Silicon</p>
+                    <button class="download-btn" onclick="showDownloadModal('macos')">
+                        Download
+                    </button>
+                </div>
+            </div>
+
+            <div class="build-from-source">
+                <h3>Build from Source</h3>
+                <p>Want to compile RootBrowser yourself? Check our GitHub repository for detailed build instructions.</p>
+                <a href="https://github.com/aryanweblabs/rootbrowser" class="source-link">View on GitHub →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Frequently Asked</h2>
+                <p>Common questions about RootBrowser</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Is RootBrowser really open source?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! RootBrowser is 100% open source under the MIT License. You can review the entire codebase on GitHub and compile it yourself.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How does Tor integration work?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>RootBrowser includes built-in Tor support. When you enable Private Mode, all traffic is routed through Tor's 3-hop circuits. You'll also get enhanced fingerprint protection and in-memory-only cookies.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Will it work on my system?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>RootBrowser requires Qt 6.2+ and a modern C++ compiler (GCC 9+, Clang 10+, or MSVC 2019+). It runs on Linux, Windows, and macOS. Check the build instructions for your OS.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How is it different from Firefox?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>RootBrowser focuses on privacy-first design with built-in Tor, fingerprint protection, and a clean, modern UI. We use Chromium for rendering (like Chrome) but with privacy as the default, not an afterthought.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Is my data stored anywhere?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Bookmarks and history are stored locally in JSON format on your machine. Private mode doesn't store anything—cookies and cache are kept in RAM only and cleared when you close the window.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can I use uBlock Origin or other extensions?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>RootBrowser has a built-in ad blocker that works on YouTube and other sites. Extension support depends on your compiled version, but the core browser includes privacy tools by default.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-final" id="cta">
+        <div class="section-container">
+            <div class="cta-content">
+                <h2>Ready to Browse Privately?</h2>
+                <p>Join thousands of users who value their privacy and speed.</p>
+                <div class="cta-buttons">
+                    <button class="cta-primary-large" id="ctaDownloadFinal">Download Now</button>
+                    <a href="https://github.com/aryanweblabs/rootbrowser" target="_blank" class="cta-secondary-large">Star on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="section-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>RootBrowser</h4>
+                    <p>A modern, privacy-focused web browser built with Qt6 and Chromium.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="https://github.com/aryanweblabs/rootbrowser">GitHub</a></li>
+                        <li><a href="https://github.com/aryanweblabs/rootbrowser/issues">Issues</a></li>
+                        <li><a href="https://github.com/aryanweblabs/rootbrowser/wiki">Wiki</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">License (MIT)</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Social</h4>
+                    <ul>
+                        <li><a href="https://github.com/aryanweblabs">GitHub Profile</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 RootBrowser. MIT Licensed. Built with ❤️ by AryanWebLabs</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Download Modal -->
+    <div class="modal" id="downloadModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeDownloadModal()">×</button>
+            <h3 id="modalTitle">Download Instructions</h3>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="js/main.js"></script>
+</body>
+</html>
